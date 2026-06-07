@@ -17,7 +17,7 @@ app.use((req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.send("API Running");
+  res.send("API is Running");
 });
 
 
