@@ -16,16 +16,17 @@ app.use((req, res) => {
   res.status(404).json({ message: 'Route not found' });
 });
 
-const startServer = async () => {
-  try {
-    await connectDB();
-    app.listen(PORT, () => {
-      console.log(`Server running on port ${PORT}`);
-    });
-  } catch (error) {
-    console.error('Failed to start server:', error.message);
-    process.exit(1);
-  }
-};
+app.get("/", (req, res) => {
+  res.send("API Running");
+});
 
-startServer();
+
+await connectDB();
+    
+// app.listen(PORT, () => {
+//       console.log(`Server running on port ${PORT}`);
+//     });
+  
+
+
+export default app;
